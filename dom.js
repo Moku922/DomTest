@@ -9,4 +9,17 @@ headerTitle.style.border = "solid 3px #000"
 let title = document.getElementsByClassName("title")[0];
 console.log(title);
 title.style.color = "green"
-title.style.fontWeight="900"
+title.style.fontWeight = "900"
+
+
+// Get Elements by Class
+
+let item = document.getElementsByClassName("list-group-item");
+
+item[2].style.background = "green"
+
+for (let i = 0; i<item.length; i++){
+    item[i].style.fontWeight = "900"
+}
+
+
