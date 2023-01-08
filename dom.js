@@ -22,4 +22,12 @@ for (let i = 0; i<item.length; i++){
     item[i].style.fontWeight = "900"
 }
 
+// Get Element by tag
+
+let li = document.getElementsByTagName("li");
+
+for (let i = 0; i < li.length; i++){
+    li[i].style.background = "#f4f4f4"
+}
+
 
