@@ -67,3 +67,19 @@ function removeItem(e){
         }        
     }
 }
+
+// Adding edit button to existing
+let groupItem = document.querySelectorAll(".list-group-item");
+
+for(let i=0; i < groupItem.length ; i++){ 
+    let groupItem = document.querySelectorAll(".list-group-item");
+ // add edit button
+ let editBtn = document.createElement("button");
+
+ // add class 
+ editBtn.className = "btn-outline-secondary btn-sm float-right"
+
+ // add text to button
+ editBtn.appendChild(document.createTextNode("Edit"));
+    groupItem[i].appendChild(editBtn);
+}
