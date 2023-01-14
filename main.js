@@ -28,26 +28,45 @@ function storeData(e){
     li.appendChild(document.createTextNode(" - "+userPhone));
     
     users.appendChild(li);
- 
-   // delete button
-   let deleteBtn = document.createElement("input");
-   // add class  to button
-//    deleteBtn.className = "btn btn-danger btn-sm float-right delete";
-    deleteBtn.type = "button";
-    deleteBtn.value = "delete";
-    deleteBtn.onclick = ()=> {
+
+    // add Edit button
+    let editBtn = document.createElement("input");
+    editBtn.type = "button";
+    editBtn.value = "Edit";
+    // add edit button to li
+    li.appendChild(editBtn);
+    // adding edit function
+    editBtn.onclick = () => {
+        document.querySelector("#name").value=myObj.name;
+        document.querySelector("#email").value=myObj.email;
+        document.querySelector("#mNumber").value=myObj.phone_number;
+
         users.removeChild(li);
-        localStorage.removeItem(userName);
+        localStorage.removeItem(userEmail);
+
     }
-   // add button to li
+
+    // delete button
+    let deleteBtn = document.createElement("input");
+    // add class  to button
+    deleteBtn.type = "button";
+    deleteBtn.value = "Delete";
+    deleteBtn.onclick = () => {
+        users.removeChild(li);
+        localStorage.removeItem(userEmail);
+    }
+   // add Delete button to li
    li.appendChild(deleteBtn);
+
+   
+
     let myObj = {
         name: userName ,
         email: userEmail ,
         phone_number: userPhone
     }
     let myObjString = JSON.stringify(myObj);
-    localStorage.setItem(userName,myObjString);
+    localStorage.setItem(userEmail,myObjString);
 
     let myObjDestring = JSON.parse(myObjString);
 
